@@ -3,7 +3,7 @@ var TelnetSocket, net, socket, tSocket;
 
 const { host, port } = require("./secrets.js");
 
-import { triggers } from "./triggers.js");
+import { triggers } from "./triggers.js";
 
 net = require("net");
 
