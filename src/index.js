@@ -1,14 +1,14 @@
 // get references to the required stuff
 var TelnetSocket, net, socket, tSocket;
 
-const { username, password } = require("./secrets.js");
+const { username, password, host, port } = require("./secrets.js");
 
 net = require("net");
 
 ({TelnetSocket} = require("telnet-stream"));
 
 // create a Socket connection
-socket = net.createConnection(8000, "mud.accursed-lands.com");
+socket = net.createConnection(port, host);
 
 // decorate the Socket connection as a TelnetSocket
 tSocket = new TelnetSocket(socket);
