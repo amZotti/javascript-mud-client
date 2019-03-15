@@ -1,7 +1,9 @@
 // get references to the required stuff
 var TelnetSocket, net, socket, tSocket;
 
-const { username, password, host, port } = require("./secrets.js");
+const { host, port } = require("./secrets.js");
+
+import { triggers } from "./triggers.js");
 
 net = require("net");
 
@@ -34,10 +36,6 @@ process.stdin.on("data", function(buffer) {
   return tSocket.write(input);
 });
 
-const triggers = [
-	{ trigger: /Please enter an account name:/g, input: username},
-	{ trigger: /What is your password?/g, input: password },
-];
 
 function runTriggers(text) {
 	triggers.forEach(({trigger, input}) => {
