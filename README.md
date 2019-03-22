@@ -12,4 +12,6 @@ module.exports = {
 };
 ```
 
+2. run `npm install` in root
+
 2. run `node index.js` in root
